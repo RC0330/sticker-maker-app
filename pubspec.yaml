@@ -10,9 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^1.2.0
-  archive: ^3.4.10
-  image: ^4.1.3
-  image_picker: ^1.0.4
+  image_picker: ^1.1.0
+  image: ^4.1.7     # 用來切割圖片
+  archive: ^3.4.10  # 用來打包 ZIP
 
 dev_dependencies:
   flutter_test:
