@@ -101,6 +101,9 @@ class _MainScreenState extends State<MainScreen> {
     try {
       final bytes = await _selectedImage!.readAsBytes();
       var request = http.MultipartRequest('POST', Uri.parse('http://10.1.152.25:8000/remove-bg/'));
+      // 💡 補上這兩行，提高與 Safari 的相容性
+      request.headers['Accept'] = '*/*';
+      request.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)';
       request.files.add(http.MultipartFile.fromBytes('file', bytes, filename: 'upload.png'));
       
       var response = await request.send();
